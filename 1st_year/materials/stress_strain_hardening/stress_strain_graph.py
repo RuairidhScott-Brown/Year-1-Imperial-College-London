@@ -146,58 +146,65 @@ def graph_3_nominal(aluminium, composite, polymer):
     fig.autofmt_xdate()
     plt.show()
 
+
+    fig, ax = plt.subplots(1,1)
+
 def graph_3_true(aluminium, composite, polymer):
-    regression_line_poly = [((555437314.998022/10000000)*x)+(2356348.99896217/10000000) for x in polymer["true strain"]]
-    regression_line_composite = [((36580513163.4834/10000000)*i)+(-49377671.2510246/10000000) for i in composite["true strain"]]
-    regression_line_al = [((17582773310.107/10000000)*k)+(-63441404.008927/10000000) for k in aluminium["true strain"]]
+    regression_line_poly = [((555437314.998022/1000000)*x)+(2356348.99896217/1000000) for x in polymer["true strain"]]
+    regression_line_composite = [((36580513163.4834/1000000)*i)+(-49377671.2510246/1000000) for i in composite["true strain"]]
+    regression_line_al = [((17582773310.107/1000000)*k)+(-63441404.008927/1000000) for k in aluminium["true strain"]]
+    regression_line_hardness = [((17582773310.107/1000000)*(l-0.049958))+(-63441404.008927/1000000)for l in aluminium["true strain"]]
 
 
+    fig, ax = plt.subplots(1,1)
+    fig2, ax2 = plt.subplots(1,1)
+    fig3, ax3 = plt.subplots(1,1)
+
+    ture = ax.scatter(aluminium['true strain'], aluminium['true stress']/1000000, s = 1)
+    nominal = ax.scatter(aluminium['nominal strain'], aluminium['nominal stress']/1000000, color = 'r',s=  1)
+    e, = ax.plot(aluminium["true strain"], regression_line_al)
+    h, =ax.plot(aluminium["true strain"], regression_line_hardness, color = 'black', linestyle = '--')
+    ax.axhline(y=216.7 ,color = 'black', linestyle = '--' )
+    ax.axhline(y=235, color = 'black', linestyle = '--')
+    #ax.axvline(x=0.049958,color = 'black', linestyle = '--' )
+    ax.set(ylim = (-0.5,300))
+    ax.set_ylabel("Stress (MPa)")
+    ax.set_title("Aluminium")
+    #ax.set_xlabel("Strain")
+
+    true_comp = ax2.scatter(composite['true strain'], composite['true stress']/1000000, s = 1)
+    nominal_comp = ax2.scatter(composite['nominal strain'], composite['nominal stress']/1000000, color = 'r', s = 1)
+    e_comp, = ax2.plot(composite["true strain"], regression_line_composite)
+    ax2.set(xlim=(-0.005, 0.03), ylim=(-5,800))
+    ax2.set_title("Composite")
+    ax2.set_ylabel("Stress (MPa)")
+    #ax2.set_xlabel("Strain")
 
 
+    true_poly = ax3.scatter(polymer['true strain'], polymer['true stress']/1000000, s = 1)
+    nominal_poly = ax3.scatter(polymer['nominal strain'], polymer['nominal stress']/1000000, color = 'r', s = 1)
+    e_poly, = ax3.plot(polymer["true strain"], regression_line_poly)
+    ax3.set(xlim=(-0.05, 0.45), ylim=(-0.5, 90))
+    ax3.set_title("Polymer")
+    ax3.set_ylabel("Stress (MPa)")
+    #ax3.set_xlabel("Strain")
 
+    fig.legend((ture, nominal, e, h), ('True Strain', 'Nominal Strain', 'Youngs Modulus', 'Hardness'), frameon = False, loc = 'lower center', ncol = 4)
+    fig2.legend((true_comp, nominal_comp, e_comp), ('True Strain', 'Nominal Strain', 'Youngs Modulus'), frameon = False, loc = 'lower center', ncol = 3)
+    fig3.legend((true_poly, nominal_poly, e_poly), ('True Strain', 'Nominal Strain', 'Youngs Modulus'), frameon = False, loc = 'lower center', ncol = 3)
 
-
-    fig, ax = plt.subplots(1,3)
-    ax[0].scatter(aluminium['true strain'], aluminium['true stress']/10000000)
-    ax[0].scatter(aluminium['nominal strain'], aluminium['nominal stress']/10000000, color = 'r')
-    ax[0].plot(aluminium["true strain"], regression_line_al)
-    ax[0].axhline(y=21.8, color = 'r')
-    ax[0].axvline(x=0.049958, color = 'r')
-    ax[0].set(ylim = (-0.5,30))
-    ax[0].set_ylabel("Stress (MPa)")
-    ax[0].set_title("Aluminium")
-
-    ax[1].scatter(composite['true strain'], composite['true stress']/10000000)
-    ax[1].scatter(composite['nominal strain'], composite['nominal stress']/10000000, color = 'r')
-    ax[1].plot(composite["true strain"], regression_line_composite)
-    ax[1].set(xlim=(-0.005, 0.03), ylim=(-5,80))
-    ax[1].set_title("Composite")
-    ax[1].set_xlabel("Strain")
-
-
-    ax[2].scatter(polymer['true strain'], polymer['true stress']/10000000)
-    ax[2].scatter(polymer['nominal strain'], polymer['nominal stress']/10000000, color = 'r')
-    ax[2].plot(polymer["true strain"], regression_line_poly)
-    ax[2].set(xlim=(-0.05, 0.45), ylim=(-0.5, 9))
-    ax[2].set_title("Polymer")
-
-    plt.suptitle("True Stess vs Strain", fontsize =15 )
-    fig.autofmt_xdate()
     plt.show()
-
-
-
 
 if '__main__' == __name__:
     raw_data = strain_data()
-    graph_1(raw_data)
+    #graph_1(raw_data)
     calculated_data = strain_calculations(raw_data)
     m_al, b_al, m_brass, b_brass, m_cu, b_cu = line_of_best_fit(calculated_data)
-    graph_2(calculated_data, m_al, b_al, m_brass, b_brass, m_cu, b_cu)
-    print(calculated_data)
-    print(m_al, b_al, m_brass, b_brass, m_cu, b_cu)
+    #graph_2(calculated_data, m_al, b_al, m_brass, b_brass, m_cu, b_cu)
+    #print(calculated_data)
+    #print(m_al, b_al, m_brass, b_brass, m_cu, b_cu)
     aluminium, composite, polymer =  tenstion_data()
-    graph_3_nominal(aluminium, composite, polymer)
+    #graph_3_nominal(aluminium, composite, polymer)
     graph_3_true(aluminium, composite, polymer)
 
 
