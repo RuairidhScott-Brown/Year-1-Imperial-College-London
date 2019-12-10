@@ -1,0 +1,24 @@
+\select@language {english}
+\contentsline {figure}{\numberline {1}{\ignorespaces Dummy figure caption}}{2}
+\contentsline {figure}{\numberline {2}{\ignorespaces Dummy figure caption}}{3}
+\contentsline {figure}{\numberline {3}{\ignorespaces Dummy figure caption}}{3}
+\contentsline {figure}{\numberline {4}{\ignorespaces Dummy figure caption}}{4}
+\contentsline {figure}{\numberline {5}{\ignorespaces Dummy figure caption}}{4}
+\contentsline {figure}{\numberline {6}{\ignorespaces Dummy figure caption}}{4}
+\contentsline {figure}{\numberline {7}{\ignorespaces Dummy figure caption}}{5}
+\contentsline {figure}{\numberline {8}{\ignorespaces Dummy figure caption}}{5}
+\contentsline {figure}{\numberline {9}{\ignorespaces Dummy figure caption}}{6}
+\contentsline {figure}{\numberline {10}{\ignorespaces Dummy figure caption}}{6}
+\contentsline {figure}{\numberline {11}{\ignorespaces Force applied via the tensile meter (kN) vs. the amplified voltage from the wheatstone bridge (V).}}{6}
+\contentsline {figure}{\numberline {12}{\ignorespaces Nominal stress (MPa) vs. nominal strain acting on each specimen with a line of best fit plotted to estimate the youngs modulus ($Nm^{-2}$). Note: the errors have been neglected due to scale but are present in figure[\ref {Fig4}] and figure[\ref {Fig5}].}}{7}
+\contentsline {figure}{\numberline {13}{\ignorespaces Raw results from the tensile meter and strain gauge}}{8}
+\contentsline {figure}{\numberline {14}{\ignorespaces Processed data from the tensile meter to calculate stress}}{8}
+\contentsline {figure}{\numberline {15}{\ignorespaces Processed data from the voltmeter to calculate the strain during the loading phase}}{8}
+\contentsline {figure}{\numberline {16}{\ignorespaces youngs modulus's for the loading and unloading phase}}{8}
+\contentsline {figure}{\numberline {17}{\ignorespaces Nominal stress (MPa) vs. nominal strain on each sample (aluminium, composite, polymer) with an unloading phase}}{9}
+\contentsline {figure}{\numberline {18}{\ignorespaces True stress vs. true strain against nominal stress vs. nominal strain of the polymer specimen with a line of best fit that estimates the youngs modulus.}}{10}
+\contentsline {figure}{\numberline {19}{\ignorespaces True stress vs. true strain against nominal stress vs. nominal strain of the aluminium specimen with a line of best fit that estimates the youngs modulus and estimation for the hardness using Tabor prediction. (Toughness from true stress strain curve = 705 MPa and from the nominal stress strain curve = 650 MPa)}}{10}
+\contentsline {figure}{\numberline {20}{\ignorespaces True stress vs. true strain against nominal stress vs. nominal strain of the composite specimen with a line of best fit that estimates the youngs modulus.}}{11}
+\contentsline {figure}{\numberline {21}{\ignorespaces Dimensions of dogbone specimen as well as calculated material properties from the graph. Ultimate Tensile Strength (UTS}}{11}
+\contentsline {figure}{\numberline {22}{\ignorespaces Raw and processed results from the hardness testing. d1 and d2 represent the diagonal distance across the indentation diamond from the vickers indenter.}}{11}
+\contentsline {figure}{\numberline {23}{\ignorespaces Hardness values in MPa The value calculated from the hardness experiment doesn't match the results from the Tabor prediction in figure[\ref {Fig9}]}}{11}

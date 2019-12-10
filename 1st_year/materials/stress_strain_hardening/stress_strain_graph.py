@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env pythonw
 
 import pandas as pd 
 import numpy as np 
@@ -8,7 +8,7 @@ import collections
 from statistics import mean
 
 def strain_data():
-    excel_file = '/home/ruairidh/Documents/ICL/1st_year/materials/stress_strain_hardening/strain_measurements.xlsx'
+    excel_file = 'strain_measurements.xlsx'
     raw_data = pd.read_excel(excel_file, sheetname = 1)
     return raw_data
     #print(raw_data.head())
@@ -109,11 +109,11 @@ def graph_1(raw_data):
 
 
 def tenstion_data():
-    aluminium_excel = '/home/ruairidh/Documents/ICL/1st_year/materials/stress_strain_hardening/group_11/al_stress_strain_failure.xlsx'
+    aluminium_excel = 'group_11/al_stress_strain_failure.xlsx'
     raw_aluminium = pd.read_excel(aluminium_excel, sheetname = 0)
-    composite_excel = '/home/ruairidh/Documents/ICL/1st_year/materials/stress_strain_hardening/group_11/composite.xlsx'
+    composite_excel = 'group_11/composite.xlsx'
     raw_composite = pd.read_excel(composite_excel, sheetname = 0)
-    polymer_excel = '/home/ruairidh/Documents/ICL/1st_year/materials/stress_strain_hardening/group_11/poly_stress_strain_failure.xlsx'
+    polymer_excel = 'group_11/poly_stress_strain_failure.xlsx'
     raw_polymer = pd.read_excel(polymer_excel, sheetname = 0)
     raw_aluminium = raw_aluminium.dropna()
     raw_aluminium.columns = ['time', 'mm', 'kN','strain', 'N/mm^2', 'digits', 'nominal strain', 'nominal stress', 'true strain', 'true stress']
